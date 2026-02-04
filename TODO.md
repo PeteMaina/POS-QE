@@ -146,25 +146,25 @@ This roadmap is derived from the Software Requirements Specification (SRS) for t
 - [ ] 127. Add animation to Login entrance
 
 ### User Management UI (Admin)
-- [ ] 128. Create User List Page
-- [ ] 129. Fetch Users from API
-- [ ] 130. Render Users in a Table
-- [ ] 131. Create "Add User" Modal
-- [ ] 132. Create "Add User" Form
-- [ ] 133. Field: Username
-- [ ] 134. Field: Password
-- [ ] 135. Field: Role Selection (Dropdown)
-- [ ] 136. Submit New User to API
-- [ ] 137. Handle Success/Error in Add User
-- [ ] 138. Create "Edit User" Modal
-- [ ] 139. Populate Edit Form with user data
-- [ ] 140. Submit Edit User to API
-- [ ] 141. Implement "Delete/Deactivate User" button
-- [ ] 142. Confirm Deletion Dialog
-- [ ] 143. Call Delete API
-- [ ] 144. Refresh User List after updates
-- [ ] 145. Style User Table
-- [ ] 146. Add Pagination to User Table
+- [x] 128. Design User List Page (Table View) <!-- id: 128 -->
+- [x] 129. Create User List Component <!-- id: 129 -->
+- [x] 130. Backend Integration: Fetch Users <!-- id: 130 -->
+- [x] 131. Add "Create User" Button <!-- id: 131 -->
+- [x] 132. Create "Add User" Modal/Form <!-- id: 132 -->
+- [x] 133. Form Validation (Username required, Password match) <!-- id: 133 -->
+- [x] 134. Backend Integration: Create User <!-- id: 134 -->
+- [x] 135. Add "Edit User" Button <!-- id: 135 -->
+- [x] 136. Create "Edit User" Modal/Form (Pre-fill data) <!-- id: 136 -->
+- [x] 137. Backend Integration: Update User <!-- id: 137 -->
+- [x] 138. Add "Delete User" Button (with confirmation) <!-- id: 138 -->
+- [x] 139. Backend Integration: Delete User <!-- id: 139 -->
+- [x] 140. Implement Role Selection (Dropdown) <!-- id: 140 -->
+- [x] 141. Implement Active/Inactive Toggle <!-- id: 141 -->
+- [x] 142. Display Success/Error Toasts <!-- id: 142 -->
+- [x] 143. Handle "Self-deletion" prevention <!-- id: 143 -->
+- [x] 144. Design Layout (Sidebar + Header) <!-- id: 144 -->
+- [x] 145. Implement Sidebar Navigation <!-- id: 145 -->
+- [x] 146. Highlight Active Route in Sidebar <!-- id: 146 -->
 - [ ] 147. Add Search filter to User Table
 - [ ] 148. Verify Admin permissions on UI
 - [ ] 149. Verify Cashier cannot see User Management
@@ -173,31 +173,31 @@ This roadmap is derived from the Software Requirements Specification (SRS) for t
 ## Phase 3: Inventory Management Module (Tasks 151-300)
 
 ### Backend - Inventory
-- [ ] 151. Define Category model
-- [ ] 152. Define Product model
-- [ ] 153. Define Variant model (Size, Color)
-- [ ] 154. Define StockLog model (for tracking movements)
-- [ ] 155. Migration for Inventory tables
-- [ ] 156. Apply Inventory migration
-- [ ] 157. Create Category Schemas (Create, Read, Update)
-- [ ] 158. Create Product Schemas (Create, Read, Update)
-- [ ] 159. Create Variant Schemas
-- [ ] 160. CRUD Endpoint: GET /categories
-- [ ] 161. CRUD Endpoint: POST /categories
-- [ ] 162. CRUD Endpoint: PUT /categories/{id}
-- [ ] 163. CRUD Endpoint: DELETE /categories/{id}
-- [ ] 164. CRUD Endpoint: GET /products
-- [ ] 165. Implement Pagination for products
-- [ ] 166. Implement Search for products (Name, SKU)
-- [ ] 167. CRUD Endpoint: POST /products
-- [ ] 168. Handle Image upload (optional, maybe just store path)
-- [ ] 169. CRUD Endpoint: GET /products/{id}
-- [ ] 170. CRUD Endpoint: PUT /products/{id}
-- [ ] 171. CRUD Endpoint: POST /products/{id}/variants
-- [ ] 172. Endpoint: POST /inventory/adjust
-- [ ] 173. Logic to update stock count
-- [ ] 174. Logic to create StockLog entry
-- [ ] 175. Logic to prevent negative stock (if configured)
+- [x] 151. Define Category model <!-- id: 151 -->
+- [x] 152. Define Product model <!-- id: 152 -->
+- [x] 153. Define Variant model (Size, Color) <!-- id: 153 -->
+- [x] 154. Define StockLog model (for tracking movements) <!-- id: 154 -->
+- [x] 155. Migration for Inventory tables <!-- id: 155 -->
+- [x] 156. Apply Inventory migration <!-- id: 156 -->
+- [x] 157. Create Category Schemas (Create, Read, Update) <!-- id: 157 -->
+- [x] 158. Create Product Schemas (Create, Read, Update) <!-- id: 158 -->
+- [x] 159. Create Variant Schemas <!-- id: 159 -->
+- [x] 160. CRUD Endpoint: GET /categories <!-- id: 160 -->
+- [x] 161. CRUD Endpoint: POST /categories <!-- id: 161 -->
+- [x] 162. CRUD Endpoint: PUT /categories/{id} <!-- id: 162 -->
+- [x] 163. CRUD Endpoint: DELETE /categories/{id} <!-- id: 163 -->
+- [x] 164. CRUD Endpoint: GET /products <!-- id: 164 -->
+- [x] 165. Implement Pagination for products <!-- id: 165 -->
+- [x] 166. Implement Search for products (Name, SKU) <!-- id: 166 -->
+- [x] 167. CRUD Endpoint: POST /products <!-- id: 167 -->
+- [x] 168. Handle Image upload (optional, maybe just store path) <!-- id: 168 -->
+- [x] 169. CRUD Endpoint: GET /products/{id} <!-- id: 169 -->
+- [x] 170. CRUD Endpoint: PUT /products/{id} <!-- id: 170 -->
+- [x] 171. CRUD Endpoint: POST /products/{id}/variants <!-- id: 171 -->
+- [x] 172. Endpoint: POST /inventory/adjust <!-- id: 172 -->
+- [x] 173. Logic to update stock count <!-- id: 173 -->
+- [x] 174. Logic to create StockLog entry <!-- id: 174 -->
+- [x] 175. Logic to prevent negative stock (if configured) <!-- id: 175 -->
 - [ ] 176. Endpoint: GET /inventory/low-stock
 - [ ] 177. Bulk import endpoint (JSON/CSV)
 - [ ] 178. Unit tests for Product creation
@@ -333,6 +333,197 @@ This roadmap is derived from the Software Requirements Specification (SRS) for t
 - [ ] 294. Add specific variant to cart
 - [ ] 295. Cancel variant selection
 
+## Phase 4.5: POS Advanced Features & Shortcuts (Tasks 296-450)
+
+### Keyboard Shortcuts & Accessibility
+- [ ] 296. Define global keymap configuration
+- [ ] 297. Implement F-key shortcuts (F1: Help, F12: Pay)
+- [ ] 298. Bind "Esc" to Cancel/Close Modals
+- [ ] 299. Bind "Space" to Quick Pay (optional)
+- [ ] 300. Bind "Search" to Ctrl+F
+- [ ] 301. Bind "+" to Increase Qty
+- [ ] 302. Bind "-" to Decrease Qty
+- [ ] 303. Bind "Del" to Remove Item
+- [ ] 304. Implement focus trapping in Modals
+- [ ] 305. Ensure ARIA labels on all Grid items
+- [ ] 306. Ensure ARIA labels on all Cart items
+- [ ] 307. Test tab navigation flow in Cashier
+- [ ] 308. Test screen reader announcements for Total updates
+
+### Discounts & Promotions
+- [ ] 309. Create Discount Model (Backend)
+- [ ] 310. Define Discount Types (Percentage, Fixed Amount)
+- [ ] 311. Backend API for applying discount
+- [ ] 312. Frontend UI: Add Discount Button
+- [ ] 313. Modal to enter Discount Code or Amount
+- [ ] 314. Apply Discount to single line item
+- [ ] 315. Apply Discount to entire cart
+- [ ] 316. Validate Discount limits (e.g. max 100%)
+- [ ] 317. Display Discount visually in Cart
+- [ ] 318. Display Original Price vs Discounted Price
+- [ ] 319. Calculate Total Savings
+- [ ] 320. Print Savings on Receipt
+
+### Held Carts / Suspended Sales
+- [ ] 321. Define SuspendedSale model
+- [ ] 322. Backend API to park/suspend sale
+- [ ] 323. Backend API to retrieve suspended sales
+- [ ] 324. UI Button: "Hold Cart"
+- [ ] 325. Clear current cart on Hold
+- [ ] 326. Store Customer Name interaction for Hold
+- [ ] 327. UI Section: "Recall Held Cart"
+- [ ] 328. List valid held carts
+- [ ] 329. Restore items to active cart
+- [ ] 330. Delete held cart if abandoned
+
+### Session Management & Locking
+- [ ] 331. Implement Auto-lock timer
+- [ ] 332. Create Pin Pad Lock Screen
+- [ ] 333. Validate PIN against User DB
+- [ ] 334. Quick Switch User feature
+- [ ] 335. Audit Log for Lock/Unlock events
+- [ ] 336. Persist Cart state across reloads (LocalStorage)
+- [ ] 337. Persist User session (Refresh Tokens)
+- [ ] 338. Handle Token Expiration gracefully
+
+### Advanced Checkout Scenarios
+- [ ] 339. Split Payment UI (Cash + Card) - Future proofing
+- [ ] 340. Handle partial payments
+- [ ] 341. Calculate logic for remaining balance
+- [ ] 342. Refund/Return Mode toggle
+- [ ] 343. Search historical sale for return
+- [ ] 344. Select items to return from history
+- [ ] 345. Validate return quantity <= sold quantity
+- [ ] 346. Process Negative Transaction (Refund)
+- [ ] 347. Update Inventory (Add back)
+- [ ] 348. Print Refund Receipt
+- [ ] 349. Manager Override requirement for Refunds
+- [ ] 350. Manager Override UI (Modal for Admin Creds)
+
+### Customer Association (Lightweight CRM)
+- [ ] 351. Define Customer Model
+- [ ] 352. Backend API: Create Customer
+- [ ] 353. Backend API: Search Customer
+- [ ] 354. POS UI: "Add Customer" Button
+- [ ] 355. Search Customer by Phone/Name
+- [ ] 356. Create New Customer Quick Form
+- [ ] 357. Link Customer to Sale
+- [ ] 358. Display Customer Name on Cart header
+- [ ] 359. Display Customer Loyalty Points (Placeholder)
+- [ ] 360. Save Customer logic in Sales Transaction
+
+### UI State Management (Detailed)
+- [ ] 361. Design "Empty Cart" State illustration
+- [ ] 362. Design "No Products Found" State
+- [ ] 363. Design "Network Error" Toast
+- [ ] 364. Design "Success" Sale Completion Modal
+- [ ] 365. Implement Skeleton Loader for Product Grid
+- [ ] 366. Implement Loading Spinner for Payment processing
+- [ ] 367. Handle "Item Out of Stock" warning on add
+- [ ] 368. Handle "Low Stock" warning visually
+- [ ] 369. Create Tooltips for icon-only buttons
+- [ ] 370. Create "Help" overlay for keyboard shortcuts
+
+### Tax Handling
+- [ ] 371. Define Tax Rules (Global/Category based)
+- [ ] 372. Configure Tax Rate in Settings
+- [ ] 373. Calculate Tax logic in Cart
+- [ ] 374. Toggle Tax Inclusive/Exclusive prices
+- [ ] 375. Display Tax Line item in Totals
+- [ ] 376. Ensure Tax rounding compliance
+- [ ] 377. Backend storage of Tax collected
+
+### POS Settings & Configuration
+- [ ] 378. Settings Page: General
+- [ ] 379. Settings Page: Peripheral Setup
+- [ ] 380. Settings Page: Receipt Header/Footer
+- [ ] 381. Settings: Toggle Sound Effects
+- [ ] 382. Settings: Toggle Dark/Light Mode
+- [ ] 383. Settings: Default Category
+- [ ] 384. Settings: Grid Layout density
+- [ ] 385. Store Settings in LocalStorage/Electron-Store
+
+### Robustness & Edge Cases
+- [ ] 386. Test max integer limits on Quantity
+- [ ] 387. Test max float limits on Price
+- [ ] 388. Prevent rapid-fire double clicks on "Pay"
+- [ ] 389. Sanitize input for Product Search (SQL Injection check)
+- [ ] 390. Handle special characters in Product Names
+- [ ] 391. Handle long Product Names (Truncate/Wrap)
+- [ ] 392. Handle extremely long receipts
+- [ ] 393. Stress test Cart with 100+ items
+- [ ] 394. Stress test Search with 10k items
+- [ ] 395. Optimize re-renders for Cart updates (useMemo)
+
+### Code Cleanup & Refactoring (Mid-Project)
+- [ ] 396. Refactor CartReducer
+- [ ] 397. Extract "PriceFormatter" utility
+- [ ] 398. Extract "DateFormatter" utility
+- [ ] 399. Ensure strict type checking (Prop-types or TS interface)
+- [ ] 400. Review console warnings
+- [ ] 401. Standardize spacing in CSS
+- [ ] 402. Standardize color variables
+- [ ] 403. Check consistent button sizes
+- [ ] 404. Verify Icon set consistency (Lucide)
+- [ ] 405. Organize imports (Absolute paths)
+
+### Unit Testing POS Logic
+- [ ] 406. Test: Add Item calculation
+- [ ] 407. Test: Remove Item calculation
+- [ ] 408. Test: Subtotal calculation
+- [ ] 409. Test: Tax calculation
+- [ ] 410. Test: Discount calculation
+- [ ] 411. Test: Change Due calculation
+- [ ] 412. Test: Rounding logic
+- [ ] 413. Test: Stock deduction prediction
+- [ ] 414. Test: JSON serialization of Order
+- [ ] 415. Test: Receipt data formatting
+
+### Integration Testing POS
+- [ ] 416. Test flow: Search -> Add -> Pay -> Print
+- [ ] 417. Test flow: Scan -> Add -> Pay
+- [ ] 418. Test flow: Add -> Change Qty -> Pay
+- [ ] 419. Test flow: Add -> Remove -> Empty
+- [ ] 420. Test flow: Hold -> Resume -> Pay
+
+### Visual Regression Preparation
+- [ ] 421. Snapshot test: Empty Cart
+- [ ] 422. Snapshot test: Full Cart
+- [ ] 423. Snapshot test: Payment Modal
+- [ ] 424. Snapshot test: Product Card
+- [ ] 425. Snapshot test: Grid Layout
+
+### Mobile/Tablet Responsiveness (if needed)
+- [ ] 426. Adjust Grid columns for smaller screens
+- [ ] 427. Hide Sidebar on mobile (Hamburger menu)
+- [ ] 428. Increase touch targets for Tablet mode
+- [ ] 429. Disable hover effects on touch devices
+- [ ] 430. Test Virtual Keyboard interference
+
+### Localization & Internationalization (Prep)
+- [ ] 431. Extract hardcoded strings to translation file
+- [ ] 432. Setup i18n provider
+- [ ] 433. Configurable Currency Symbol
+- [ ] 434. Configurable Date Format
+- [ ] 435. Configurable Decimal Separator
+
+### Miscellaneous POS Features
+- [ ] 436. "Open Drawer" No-Sale button
+- [ ] 437. Manager verify for No-Sale
+- [ ] 438. Clock-in / Clock-out feature
+- [ ] 439. Cash Drop / Pay Out feature (Petty cash)
+- [ ] 440. Track Cash Drawer starting balance
+- [ ] 441. End of Day Reconciliation (Z-Report logic)
+- [ ] 442. Input Opening Float
+- [ ] 443. Input Closing Cash Count
+- [ ] 444. Calculate Cash Shortage/Overage
+- [ ] 445. Print Z-Report
+- [ ] 446. Save Z-Report to DB
+- [ ] 447. Block Sales after Close Day
+- [ ] 448. Alert if Close Day not done
+- [ ] 449. Auto-logout after Close Day
+- [ ] 450. Verify Z-Report Math
+
 ## Phase 5: Sales History & Reporting (Tasks 451-550)
 
 ### Backend - Sales
@@ -378,6 +569,72 @@ This roadmap is derived from the Software Requirements Specification (SRS) for t
 - [ ] 488. Create "Export Report" button
 - [ ] 489. Generate PDF Report (client side)
 - [ ] 490. Generate CSV Export
+- [ ] 491. Generate Excel Export (xlsx)
+- [ ] 492. Backend endpoint for Excel generation
+- [ ] 493. UI for Export Options (Date range, Columns)
+- [ ] 494. Advanced Report: Hourly Sales Heatmap
+- [ ] 495. Advanced Report: Payment Method Breakdown
+- [ ] 496. Advanced Report: Tax Collected Report
+- [ ] 497. Advanced Report: Voided/Cancelled Orders
+- [ ] 498. Advanced Report: Discount Usage
+- [ ] 499. Advanced Report: Low Stock Alert History
+- [ ] 500. Advanced Report: Cashier Performance (Avg Ticket Size)
+- [ ] 501. Advanced Report: Profit Margin Analysis
+- [ ] 502. Backend: Optimize Aggregation Queries
+- [ ] 503. Start Report: Category Performance
+- [ ] 504. Start Report: Variant Performance
+- [ ] 505. Drill-down: Click category to see products
+- [ ] 506. Drill-down: Click day to see hours
+- [ ] 507. Dashboard Widget: "Busy Hours" prediction
+- [ ] 508. Dashboard Widget: "Top Customers" (if CRM enabled)
+- [ ] 509. Dashboard Widget: "Recent Alerts"
+- [ ] 510. UI: Graph Tooltips implementation
+- [ ] 511. UI: Toggle Chart Types (Bar vs Line)
+- [ ] 512. UI: Compare with Previous Period (WoW, MoM)
+- [ ] 513. Backend: Logic for "Previous Period" calculation
+- [ ] 514. Print Report functionality
+- [ ] 515. Email Report functionality (Backend SMTP)
+- [ ] 516. Email Report UI Modal
+- [ ] 517. Schedule Report endpoint (Future)
+- [ ] 518. Report Data Caching (Redis or Memory)
+- [ ] 519. Invalidate Cache on New Sale
+- [ ] 520. Verify Report Accuracy vs Sales List
+
+### Sales History Actions
+- [ ] 521. Action: Void Sale (Admin only)
+- [ ] 522. Action: Flag Sale for Review
+- [ ] 523. Action: Add Note to Sale
+- [ ] 524. Action: Email Receipt copy
+- [ ] 525. Action: Print Gift Receipt
+- [ ] 526. UI: Timeline view of Sale events
+- [ ] 527. UI: Highlight modified/voided sales
+- [ ] 528. Advanced Search: By Amount Range
+- [ ] 529. Advanced Search: By Exact Time
+- [ ] 530. Advanced Search: By Items contained
+
+### System Logs & Audit
+- [ ] 531. Create AuditLog model
+- [ ] 532. Log Login/Logout events
+- [ ] 533. Log Price Change events
+- [ ] 534. Log Inventory Adjustment events
+- [ ] 535. Log User Creation/Deletion events
+- [ ] 536. Create Audit Log Viewer Page
+- [ ] 537. Filter Audit Logs
+- [ ] 538. Color code Severity (Info, Warn, Danger)
+- [ ] 539. Auto-archive old logs
+- [ ] 540. Export Audit Logs
+
+### Hardware & Peripherals Preparation
+- [ ] 541. Define Hardware Interface Layer
+- [ ] 542. Create Mock Hardware Service
+- [ ] 543. Create Polling mechanism for device status
+- [ ] 544. UI: Hardware Status Indicator in Footer
+- [ ] 545. UI: Connection Troubleshooter wizard
+- [ ] 546. Research: Raw Printing vs Driver Printing
+- [ ] 547. Research: WebUSB API possibilities
+- [ ] 548. Research: Electron SerialPort usage
+- [ ] 549. Install `serialport` for Electron
+- [ ] 550. Permission handling for USB devices
 
 ## Phase 6: Receipt Printing & Hardware (Tasks 551-620)
 
@@ -404,6 +661,62 @@ This roadmap is derived from the Software Requirements Specification (SRS) for t
 - [ ] 570. Handle "Printer Not Found" error gracefully
 - [ ] 571. Create "Reprint Receipt" button in History
 - [ ] 572. Frontend setting to Select Printer (if possible)
+- [ ] 573. Configure Receipt Header (Logo upload)
+- [ ] 574. Configure Receipt Footer (Custom text)
+- [ ] 575. Configure Tax ID on Receipt
+- [ ] 576. Configure Barcode on Receipt (Sale ID)
+- [ ] 577. Implementation: Generate QR Code for Receipt
+- [ ] 578. Printer: Templating Engine (Jinja2 or JS string literal)
+- [ ] 579. Printer: Charset encoding handling (International support)
+- [ ] 580. Test: Long receipt paper cut logic
+- [ ] 581. Test: Special characters printing
+- [ ] 582. Test: Logo dithering/printing quality
+- [ ] 583. Create "Print Job" Queue manager
+- [ ] 584. Handle "Out of Paper" Retry logic
+- [ ] 585. Handle "Printer Offline" queueing
+- [ ] 586. Kitchen Printer support (Future prep)
+- [ ] 587. Routing items to specific printers (Category based)
+
+### Barcode Scanner Integration
+- [ ] 588. Detect HID Keyboard input
+- [ ] 589. Logic to distinguish Scanner vs Keyboard typing (Timing)
+- [ ] 590. Configuration: Scanner Prefix/Suffix
+- [ ] 591. Global Listener hook for scanning
+- [ ] 592. Sound effect on successful scan
+- [ ] 593. Error sound on "Product Not Found"
+- [ ] 594. Test: Rapid scanning buffer
+- [ ] 595. UI: visual flash on scan
+- [ ] 596. Support for Weight Embedded Barcodes (EAN-13)
+- [ ] 597. Parser for Weight Barcodes
+- [ ] 598. Configuration: Mock Scanner for testing
+
+### Cash Drawer Integration
+- [ ] 599. Research Cash Drawer trigger codes
+- [ ] 600. Define Trigger pulse duration
+- [ ] 601. Map "Open Drawer" to Printer RJ11 signal
+- [ ] 602. Test Drawer Open command
+- [ ] 603. Secure "Open Drawer" permissions
+- [ ] 604. Log "Manual Drawer Open" events
+
+### Customer Display (Second Screen)
+- [ ] 605. Electron: Multi-window management
+- [ ] 606. Create Customer Facing View
+- [ ] 607. Route Cart data to Second Screen
+- [ ] 608. Display Idle Carousel (Ads/Promos)
+- [ ] 609. Display Cart Items live
+- [ ] 610. Display Total Due big
+- [ ] 611. Display Change Given
+- [ ] 612. Settings: Enable/Disable Second Screen
+- [ ] 613. Communication: IPC Main to Second Window
+- [ ] 614. Sync state between windows
+- [ ] 615. Test: Double monitor setup
+- [ ] 616. Test: Disconnect second monitor handling
+
+### Weighing Scale Integration (Optional)
+- [ ] 617. Research Scale Serial protocols
+- [ ] 618. Read continuous weight stream
+- [ ] 619. UI: "Get Weight" button
+- [ ] 620. Auto-update quantity based on weight
 
 ## Phase 7: Data Management & Offline First (Tasks 621-680)
 
@@ -426,6 +739,56 @@ This roadmap is derived from the Software Requirements Specification (SRS) for t
 - [ ] 634. Schedule auto-backup (Cron or Background Task)
 - [ ] 635. Implement Database Vacuum/Optimize
 - [ ] 636. Verify ACID compliance via tests
+- [ ] 637. Implement Database Integrity Check on Startup
+- [ ] 638. Automatic cleanup of temporary files
+- [ ] 639. Log Rotation policy (Keep last 7 days)
+- [ ] 640. Implement "Factory Reset" (Dangerous)
+- [ ] 641. Secure Wipe logic for Reset
+- [ ] 642. Database Migration Testing (Upgrade path)
+- [ ] 643. Test: Rollback failed migration
+- [ ] 644. Corrupt DB handling (Restore prompt)
+- [ ] 645. Export Data for Migration (JSON dump)
+- [ ] 646. Import Data from Migration
+- [ ] 647. App State persistence (Electron-store)
+- [ ] 648. Save Window Position/Size
+- [ ] 649. Save Last Logged in User (Username only)
+- [ ] 650. Save Column preferences (Hidden/Visible)
+
+### Updates & Maintenance
+- [ ] 651. Configure Electron-Updater
+- [ ] 652. S3/GitHub Releases configuration for updates
+- [ ] 653. UI: "Check for Updates" button
+- [ ] 654. UI: "Update Available" notification
+- [ ] 655. UI: Download Progress bar
+- [ ] 656. Auto-install on quit logic
+- [ ] 657. Validate Code Signing (Certificate)
+- [ ] 658. Create Changelog viewer
+- [ ] 659. Version mismatch handling (Client vs Server if split)
+- [ ] 660. Force Update requirement logic
+
+### Advanced Offline Logic
+- [ ] 661. LocalStorage Quota management
+- [ ] 662. Detect "False Online" (Captive portals)
+- [ ] 663. Queue sync requests (if Cloud added later)
+- [ ] 664. Retry exponential backoff (if Cloud added later)
+- [ ] 665. Conflict resolution strategies (Last write wins)
+- [ ] 666. UI: Sync Status detailed view
+- [ ] 667. Manual "Force Sync" button
+- [ ] 668. Cache warming strategies
+- [ ] 669. Service Worker configuration (if PWA)
+- [ ] 670. AppCache/Manifest verification
+
+### Developer Experience (DX)
+- [ ] 671. Setup Husky pre-commit hooks
+- [ ] 672. Lint-staged configuration
+- [ ] 673. Prettier-plugin-organize-imports
+- [ ] 674. Setup Storybook for Component Library
+- [ ] 675. Create Stories for Button, Card, Grid
+- [ ] 676. Documentation Generator (JSDoc/Sphinx)
+- [ ] 677. API Client Generator (OpenAPI TS)
+- [ ] 678. Docker Compose setup for Dev (if needed)
+- [ ] 679. VSCode settings sharing (`.vscode/settings.json`)
+- [ ] 680. Debugging configurations (`launch.json`)
 
 ## Phase 8: Non-Functional & Polish (Tasks 681-780)
 

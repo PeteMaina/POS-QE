@@ -59,3 +59,56 @@ def read_users(
     
     users = session.exec(select(User).offset(skip).limit(limit)).all()
     return users
+
+@router.put("/{user_id}", response_model=UserRead)
+def update_user(
+    *,
+    session: Annotated[Session, Depends(session.get_session)],
+    user_id: int,
+    user_in: UserUpdate,
+    current_user: Annotated[User, Depends(deps.get_current_user)],
+):
+    """
+    Update a user.
+    """
+    if current_user.role != "admin" and current_user.role != "owner":
+        raise HTTPException(status_code=403, detail="Not enough permissions")
+    
+    user = session.get(User, user_id)
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    
+    user_data = user_in.model_dump(exclude_unset=True)
+    if user_in.password:
+        password = user_data.pop("password")
+        user.hashed_password = security.get_password_hash(password)
+        
+    user.sqlmodel_update(user_data)
+    session.add(user)
+    session.commit()
+    session.refresh(user)
+    return user
+
+@router.delete("/{user_id}", response_model=dict)
+def delete_user(
+    *,
+    session: Annotated[Session, Depends(session.get_session)],
+    user_id: int,
+    current_user: Annotated[User, Depends(deps.get_current_user)],
+):
+    """
+    Delete a user.
+    """
+    if current_user.role != "admin" and current_user.role != "owner":
+        raise HTTPException(status_code=403, detail="Not enough permissions")
+    
+    if current_user.id == user_id:
+        raise HTTPException(status_code=400, detail="Users cannot delete themselves")
+        
+    user = session.get(User, user_id)
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+        
+    session.delete(user)
+    session.commit()
+    return {"message": "User deleted successfully"}

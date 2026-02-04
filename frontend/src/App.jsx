@@ -3,6 +3,8 @@ import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import UserList from './pages/admin/UserList';
+import Layout from './components/Layout';
 import GlobalStyle from './styles/GlobalStyle';
 
 // Create a basic GlobalStyle if it doesn't exist yet, or just ignore import for now
@@ -13,12 +15,23 @@ import GlobalStyle from './styles/GlobalStyle';
 function App() {
   return (
     <AuthProvider>
+      <GlobalStyle />
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
+
           <Route element={<ProtectedRoute />}>
-            <Route path="/" element={<Dashboard />} />
+            <Route element={<Layout />}>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/users" element={<UserList />} />
+              {/* Placeholders for future routes */}
+              <Route path="/inventory" element={<div>Inventory Page (Coming Soon)</div>} />
+              <Route path="/pos" element={<div>POS Page (Coming Soon)</div>} />
+              <Route path="/reports" element={<div>Reports Page (Coming Soon)</div>} />
+              <Route path="/settings" element={<div>Settings Page (Coming Soon)</div>} />
+            </Route>
           </Route>
+
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
