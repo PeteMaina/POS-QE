@@ -1,27 +1,30 @@
-import styled from 'styled-components';
+import { Box } from '@mui/material';
 import Sidebar from './Sidebar';
 import { Outlet } from 'react-router-dom';
 
-const Wrapper = styled.div`
-  display: flex;
-`;
-
-const MainContent = styled.main`
-  margin-left: 250px;
-  width: calc(100% - 250px);
-  min-height: 100vh;
-  background: #f8f9fa;
-`;
+// Main shell for the app using Material UI layout primitives.
+// Sidebar keeps its current implementation for now, but the overall
+// look & feel and background colors are driven by the global MUI theme.
 
 const Layout = () => {
-    return (
-        <Wrapper>
-            <Sidebar />
-            <MainContent>
-                <Outlet />
-            </MainContent>
-        </Wrapper>
-    );
+  return (
+    <Box sx={{ display: 'flex', minHeight: '100vh', bgcolor: 'background.default' }}>
+      <Sidebar />
+      <Box
+        component="main"
+        sx={{
+          ml: '250px',
+          width: 'calc(100% - 250px)',
+          p: 3,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 2,
+        }}
+      >
+        <Outlet />
+      </Box>
+    </Box>
+  );
 };
 
 export default Layout;

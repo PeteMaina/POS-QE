@@ -5,17 +5,10 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import UserList from './pages/admin/UserList';
 import Layout from './components/Layout';
-import GlobalStyle from './styles/GlobalStyle';
-
-// Create a basic GlobalStyle if it doesn't exist yet, or just ignore import for now
-// But good practice to have it. I'll create it in next step or inline it?
-// I'll create a dummy GlobalStyle file next or just remove import if not creating.
-// I'll create it.
 
 function App() {
   return (
     <AuthProvider>
-      <GlobalStyle />
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
