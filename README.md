@@ -144,4 +144,5 @@ POS-QE/
 ### 📄 License
 This project is proprietary. All rights reserved.
 
-Created with 💙 by **Antigravity**.
+Created with 💙 by Peter Maina
+devwahomemaina@gmail.com    mainapeter.netlify.app
